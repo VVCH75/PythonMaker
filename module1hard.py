@@ -1,5 +1,10 @@
-grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
-students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
-students = sorted(list(students))
-averageRating = {students[0]:sum(grades[0])/len(grades[0]),students[1]:sum(grades[1])/len(grades[1]),students[2]:sum(grades[2])/len(grades[2]),students[3]:sum(grades[3])/len(grades[3]),students[4]:sum(grades[4])/len(grades[4])}
-print(averageRating)
+list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+for i in range(3,21):
+    code_= ''
+    for j in range(0,19):
+        for k in range(1,19):
+            if i % (list_[j]+list_[k]) == 0 and list_[j] < list_[k]:
+                pare = str(list_[j])+str(list_[k])
+                code_= code_ + pare
+
+    print('Код для последовательности ',i,'- ',code_)
