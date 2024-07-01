@@ -1,8 +1,3 @@
-# def factorial(number):
-#     if number == 1:
-#         return number
-#     else:
-#         return number * factorial(number - 1)
 def all_variants(text):
     for i in range(len(text)):
         for j in range(len(text)-i):
