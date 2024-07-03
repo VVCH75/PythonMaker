@@ -1,7 +1,8 @@
-my_string = input('Введите произвольный текст: ')
-print(len(my_string))
-print(my_string.upper())
-print(my_string.lower())
-print(my_string.replace(" ",""))
-print(my_string[0])
-print(my_string[-1])
+name = 'Vyacheslav'
+print(name)
+age = 49
+print(age)
+age = age + 1
+print(age)
+is_student = True
+print(is_student)
