@@ -1,7 +1,7 @@
-immutable_var = 1, True, 'Кортеж', 'Не список'
-print(immutable_var)
-#immutable_var[1]=False
-mutable_list = [1, True,'Список','Не кортеж']
-print(mutable_list)
-mutable_list.append(333)
-print(mutable_list)
+my_string = input('Введите произвольный текст: ')
+print(len(my_string))
+print(my_string.upper())
+print(my_string.lower())
+print(my_string.replace(" ",""))
+print(my_string[0])
+print(my_string[-1])
