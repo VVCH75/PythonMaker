@@ -1,11 +1,11 @@
-def print_params(a=1, b='строка', c='номер'):
+def print_params(a=1, b='строка', c=True):
     print(a, b, c)
 
 
 print_params()
 print_params(b=25)
 print_params(c=[1, 2, 3])
-print_params(1, 2, True)
+print_params(1, 2, 'еще одна строка')
 
 values_list = [1, 'one', True]
 values_dict = {'a': 20, 'b': 'Welcome', 'c': True}
