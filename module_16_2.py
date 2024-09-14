@@ -11,8 +11,8 @@ async def user(user_id: int=Path(min_length=1, max_length=100, description='Ente
     return {"message": f"Вы вошли как пользователь № {user_id}"}
 
 @app.get("/user/{username}/{age}")
-async def welcome(username: Annotated[str,Path(min_length=5, max_length=20, description='Enter username')],
-                  age: int=Path(ge=18, le=120, description='Enter age')) -> dict:
+async def welcome(username: Annotated[str,Path(min_length=5, max_length=20, description='Enter username', example='UrbanUser')],
+                  age: int=Path(ge=18, le=120, description='Enter age', example=24)) -> dict:
     return {"message": f"Информация о пользователе. Имя: {username}, Возраст: {age}"}
 
 if __name__ == "__main__":
