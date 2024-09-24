@@ -2,12 +2,10 @@ from fastapi import FastAPI, Path
 import uvicorn
 from typing import Annotated
 
-async def app(scope, receive, send):
-    pass
 app = FastAPI()
 
 @app.get("/user/{user_id}")
-async def user(user_id: int=Path(min_length=1, max_length=100, description='Enter User ID')) -> dict:
+async def user(user_id: int=Path(ge=1, le=100, description='Enter User ID', example=0)) -> dict:
     return {"message": f"Вы вошли как пользователь № {user_id}"}
 
 @app.get("/user/{username}/{age}")
