@@ -6,12 +6,10 @@ from typing import List
 from fastapi.templating import Jinja2Templates
 
 
-async def app(scope, receive, send):
-    pass
-
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 users = []
+
 
 class User(BaseModel):
     user_id: int
@@ -23,8 +21,9 @@ class User(BaseModel):
 async def all_users(request: Request) -> HTMLResponse:
     return templates.TemplateResponse("users.html", {'request': request, 'users': users})
 
+
 @app.get(path="/user/{user_id}")
-async def us(request: Request, user_id: int) -> HTMLResponse:
+async def us(request: Request) -> HTMLResponse:
     try:
         return templates.TemplateResponse("users.html", {'request': request, 'users': users})
     except IndexError:
@@ -32,12 +31,11 @@ async def us(request: Request, user_id: int) -> HTMLResponse:
 
 
 @app.post("/user/{username}/{age}")
-async def create(age: int, username: str) -> str:
-    User.user_id = len(users)
-    User.username = username
-    User.age = age
-    users.append(User)
-    return f"Информация о пользователе. Имя: {username}, возраст {age} добавлена"
+async def create(item: User) -> str:
+    user_id = len(users)
+    users.append({'user_id': user_id, 'username': item.username, 'age': item.age})
+    return f"Информация о пользователе. Имя: {item.username}, возраст {item.age} добавлена"
+
 
 @app.put("/user/{user_id}/{username}/{age}")
 async def modify(user_id: int, username: str, age: int) -> str:
