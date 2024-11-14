@@ -48,12 +48,5 @@ class Runner:
 #
 #         return finishers
 
-if __name__ == '__main__':
-    first = Runner('Вася', 10)
-# second = Runner('Илья', 5)
-# # third = Runner('Арсен', 10)
-#
-# t = Tournament(101, first, second)
-# print(t.start())
 
 
