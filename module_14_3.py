@@ -8,7 +8,7 @@ import asyncio
 import logging
 
 logging.basicConfig(level=logging.INFO)
-api = '7285833454:AAEvGzKEMaKVv-WOedGezrAPPFt0NO3-X2M'
+api = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 bot = Bot(token=api)
 dp = Dispatcher(storage=MemoryStorage())
 form_router = Router()
